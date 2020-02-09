@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.99.100:52000/testDb1
+    username: root
+    password: mypassword
+    platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  rabbitmq:
+    port: 5672
+    host: 192.168.99.100
+    username: guest
+    password: guest
+    template:
+      exchange: Nishith
+      default-receive-queue: "employee queue"
+      routing-key: "routing-key"
+
+job:
+  schedules: 0 * * * * *
+
+
+
+
